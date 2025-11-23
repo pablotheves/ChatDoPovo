@@ -1,4 +1,4 @@
-package cadm.pablotheves.projetosocket;
+   package cadm.pablotheves.projetosocket;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +14,9 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
-
+    
+    public static String nomeUsuario = "Anonimo";
+    
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("Login"), 640, 480);

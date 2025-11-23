@@ -11,8 +11,10 @@ import java.io.Serializable;
  * @author pablo
  */
 public class Mensagem implements Serializable{
-    String nome; String mensagem;
-    Mensagem(String n, String m){
+    public String nome; 
+    public String mensagem;
+    
+    public Mensagem(String n, String m){
         nome = n;
         mensagem = m;
     }

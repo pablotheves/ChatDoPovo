@@ -22,23 +22,23 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="378.0" prefWidth="200.0">
                      <children>
-                        <VBox prefHeight="383.0" prefWidth="423.0" />
+                        <VBox fx:id="vBoxChat" prefHeight="383.0" prefWidth="423.0" />
                      </children>
                   </AnchorPane>
               </content>
             </ScrollPane>
          </center>
+         <left>
+            <ListView fx:id="listaUsuarios" prefHeight="337.0" prefWidth="142.0" BorderPane.alignment="CENTER" />
+         </left>
          <bottom>
-            <HBox prefHeight="28.0" prefWidth="556.0">
+            <HBox alignment="TOP_RIGHT" prefHeight="28.0" prefWidth="425.0" BorderPane.alignment="CENTER">
                <children>
-                  <TextField prefHeight="26.0" prefWidth="505.0" />
+                  <TextField fx:id="txtMensagem" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="358.0" />
                   <Button mnemonicParsing="false" onAction="#Enviar" prefHeight="26.0" prefWidth="55.0" text="Enviar" />
                </children>
             </HBox>
          </bottom>
-         <left>
-            <ListView prefHeight="380.0" prefWidth="130.0" BorderPane.alignment="CENTER" />
-         </left>
       </BorderPane>
     </children>
     <padding>
