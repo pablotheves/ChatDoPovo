@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * JavaFX App
+ * PARA INICIAR O APLICATIVO RODE O SERVIDOR E DEPOIS O LAUNCHER.
  */
 public class App extends Application {
 

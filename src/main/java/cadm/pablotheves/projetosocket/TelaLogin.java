@@ -4,17 +4,15 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class TelaLogin {
-    
     
     @FXML
     TextField txtNome;
     
     @FXML
     TextField txtSenha;
-    
     
     @FXML
     private void abrirChat() throws IOException {
@@ -27,10 +25,9 @@ public class TelaLogin {
             alerta.setContentText("Por favor, digite seu nome de usuário para entrar.");
             alerta.showAndWait();
             return;
-           
         }
-        
         App.nomeUsuario = nome;
+        
         App.setRoot("Chat");
     }
 }

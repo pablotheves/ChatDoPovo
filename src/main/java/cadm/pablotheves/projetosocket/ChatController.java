@@ -4,7 +4,6 @@ import classes.Mensagem;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.lang.invoke.MethodHandles;
 import java.net.Socket;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class ChatController implements Initializable {
 
@@ -43,22 +43,28 @@ public class ChatController implements Initializable {
 
             out.writeObject(new Mensagem(meuNome, "entrou no chat!"));
 
+            Platform.runLater(() -> {
+                if (vBoxChat.getScene() != null) {
+                    Stage stage = (Stage) vBoxChat.getScene().getWindow();
+                    stage.setTitle("Chat do Povo - " + meuNome);
+                }
+            });
+
             Thread escuta = new Thread(() -> {
                 try {
                     while (true) {
                         Mensagem msg = (Mensagem) in.readObject();
-                        System.out.println("Recebi nome: '" + msg.nome + "'");
-                        // Verifica se é uma atualização de lista
-                        if (msg.nome.equals("lista_servidor")) {
-                            // O servidor mandou os nomes separados por vírgula
+                        
+                        if (msg.nome != null && msg.nome.equals("lista_servidor")) {
                             String[] nomes = msg.mensagem.split(",");
 
                             Platform.runLater(() -> {
                                 listaUsuarios.getItems().clear();
-                                listaUsuarios.getItems().addAll(nomes);
+                                for(String nome : nomes) {
+                                    listaUsuarios.getItems().add(nome.trim());
+                                }
                             });
                         } else {
-                            // trata como mensagem normal
                             Platform.runLater(() -> atualizarTela(msg));
                         }
                     }
@@ -66,7 +72,7 @@ public class ChatController implements Initializable {
                     System.out.println("Conexão perdida: " + e.getMessage());
                 }
             });
-            escuta.setDaemon(true); // fecha o thread quando a janela fecha
+            escuta.setDaemon(true); 
             escuta.start();
 
         } catch (IOException e) {

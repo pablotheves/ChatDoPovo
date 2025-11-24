@@ -1,0 +1,59 @@
+.root {
+    -fx-background-color: #203a43;
+    -fx-background-image: url("/cadm/pablotheves/projetosocket/background.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.fundo-login {
+    -fx-background-image: none;
+    
+    -fx-background-color: linear-gradient(to bottom right, #0072ff, #00c6ff);
+}
+
+.list-view, .scroll-pane, .viewport {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 5);
+}
+
+.label, .text-field, .button, .list-cell {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(one-pass-box, black, 2, 0.0, 0, 1);
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 8px;
+}
+
+.list-cell:even, .list-cell:odd {
+    -fx-background-color: transparent;
+}
+
+.text-field {
+    -fx-background-color: rgba(0, 0, 0, 0.25);
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.5);
+    -fx-border-radius: 20;
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.7);
+}
+
+.button {
+    -fx-background-color: linear-gradient(to bottom, rgba(255,255,255,0.25), rgba(0,0,0,0.1));
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.6);
+    -fx-border-radius: 20;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(255,255,255,0.15));
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.4), 10, 0, 0, 0);
+}

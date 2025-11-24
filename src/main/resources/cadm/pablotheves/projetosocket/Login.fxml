@@ -5,13 +5,22 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="314.0" prefWidth="283.0" spacing="20.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cadm.pablotheves.projetosocket.TelaLogin">
+<VBox alignment="CENTER" prefHeight="314.0" prefWidth="436.0" spacing="20.0" 
+      stylesheets="@estilo.css" styleClass="fundo-login"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="cadm.pablotheves.projetosocket.TelaLogin">
    <children>
-      <Label text="O CHAT DO POVO" />
-      <TextField fx:id="txtNome" prefHeight="26.0" prefWidth="262.0" promptText="Usuário" />
-      <TextField promptText="Senha" />
-      <Button fx:id="primaryButton" onAction="#abrirChat" text="ACESSAR" />
+      <Label text="LOGIN CHAT DO POVO">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      
+      <TextField fx:id="txtNome" maxWidth="250.0" promptText="Usuário" />
+      
+      <Button fx:id="primaryButton" onAction="#abrirChat" prefHeight="30.0" prefWidth="100.0" text="ENTRAR" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
